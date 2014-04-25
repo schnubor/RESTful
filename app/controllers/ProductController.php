@@ -13,11 +13,15 @@ class ProductController extends \BaseController {
 
 		$products = Product::get();
  
-    return Response::json(array(
+    /*return Response::json(array(
         'error' => false,
         'products' => $products->toArray()),
         200
-    );
+    );*/
+
+		$data = json_encode($products->toArray());
+
+		return View::make('productView')->with('data', $data);
 	}
 
 
@@ -47,7 +51,7 @@ class ProductController extends \BaseController {
     // Validation and Filtering is sorely needed!!
     // Seriously, I'm a bad person for leaving that out.
  
-    $product->create();
+    $product->save();
  
     return Response::json(array(
       'error' => false,
