@@ -1,5 +1,5 @@
 @import 'global';
-@import url(//fonts.googleapis.com/css?family=Lato:700,400,200);
+@import url(//fonts.googleapis.com/css?family=Lato:700,400,300);
 
 body{
   background-color: #FAFAFA;
@@ -24,4 +24,9 @@ h1{
     margin: 0;
     font-family: Courier;
   }
+}
+
+span.method{
+  color: green;
+  font-weight: 300;
 }

@@ -22,7 +22,7 @@
 
     {{ HTML::ul($errors->all()) }}
 
-    <h3>JSON Response</h3>
+    <h3>JSON Response <span class="method">GET</span></h3>
 
     <div class="code">
       <p>{{ $data }}</p>
