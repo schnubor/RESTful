@@ -1,0 +1,27 @@
+@import 'global';
+@import url(//fonts.googleapis.com/css?family=Lato:700,400,200);
+
+body{
+  background-color: #FAFAFA;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: $grey;
+  padding: 20px;
+}
+
+h1{
+  margin-top: 0;
+}
+
+.code{
+  width: calc(100%-40px);
+  background-color: $grey;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+
+  p{
+    padding: 0;
+    margin: 0;
+    font-family: Courier;
+  }
+}

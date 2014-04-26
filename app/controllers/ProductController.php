@@ -12,16 +12,10 @@ class ProductController extends \BaseController {
 		// return View::make('product');
 
 		$products = Product::get();
- 
-    /*return Response::json(array(
-        'error' => false,
-        'products' => $products->toArray()),
-        200
-    );*/
 
 		$data = json_encode($products->toArray());
 
-		return View::make('productView')->with('data', $data);
+		return View::make('products.index')->with('data', $data);
 	}
 
 
@@ -48,10 +42,11 @@ class ProductController extends \BaseController {
     $product->category = Request::get('category');
     $product->price = Request::get('price');
  
-    // Validation and Filtering is sorely needed!!
-    // Seriously, I'm a bad person for leaving that out.
+    // Validation goes here ..
  
     $product->save();
+
+    $this->info('Test');
  
     return Response::json(array(
       'error' => false,
@@ -69,7 +64,6 @@ class ProductController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		// Make sure current user owns the requested resource
     $product = Product::where('id', $id)->take(1)->get();
  
     return Response::json(array(
