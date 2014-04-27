@@ -4,8 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*",
-		"fideloper/proxy": "dev-master"
+		"laravel/framework": "4.1.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -33,5 +32,8 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"require-dev": {
+    "panique/laravel-sass": "dev-master"
+	}
 }

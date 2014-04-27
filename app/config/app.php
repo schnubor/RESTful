@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'wXFI2hnJyqKpjX6GGkDbXvFfVDlCL7Ym',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,6 @@ return array(
 
 	'providers' => array(
 
-		'Fideloper\Proxy\ProxyServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
