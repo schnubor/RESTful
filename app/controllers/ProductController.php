@@ -26,7 +26,7 @@ class ProductController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('products.create');
 	}
 
 
@@ -37,22 +37,32 @@ class ProductController extends \BaseController {
 	 */
 	public function store()
 	{
-		$product = new Product;
-    $product->name = Request::get('name');
-    $product->category = Request::get('category');
-    $product->price = Request::get('price');
- 
-    // Validation goes here ..
- 
-    $product->save();
+		// validate
+		// read more on validation at http://laravel.com/docs/validation
+		$rules = array(
+			'name' => 'required',
+			'category' => 'required',
+			'price' => 'required|numeric'
+		);
+		$validator = Validator::make(Input::all(), $rules);
 
-    $this->info('Test');
- 
-    return Response::json(array(
-      'error' => false,
-      'message' => 'stored.'),
-      200
-    );
+		// process the login
+		if ($validator->fails()) {
+			return Redirect::to('api/v1/products/create')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			// store
+			$product = new Product;
+			$product->name = Input::get('name');
+			$product->category = Input::get('category');
+			$product->price = Input::get('price');
+			$product->save();
+
+			// redirect
+			Session::flash('message', 'Successfully created product!');
+			return Redirect::to('api/v1/products');
+		}
 	}
 
 

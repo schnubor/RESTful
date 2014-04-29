@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration {
 			$table->string('name')->unique();
 			$table->string('category');
 			$table->string('price');
+			$table->timestamps();
 		});
 	}
 

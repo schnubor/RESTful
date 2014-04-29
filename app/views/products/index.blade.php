@@ -36,6 +36,7 @@
           <th>Name</th>
           <th>Category</th>
           <th>Price</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -46,6 +47,11 @@
             <td>{{ $p->name }}</td>
             <td>{{ $p->category }}</td>
             <td>{{ $p->price }}</td>
+            <td>
+              <a class="btn btn-small btn-success" href="{{ URL::to('api/v1/products/' . $p->id) }}">Show</a>
+              <a class="btn btn-small btn-info" href="{{ URL::to('api/v1/products/' . $p->id) . '/edit' }}">Edit</a>
+              <a class="btn btn-small btn-danger" href="#">Delete</a>
+            </td>
           </tr>
         @endforeach
       </tbody>

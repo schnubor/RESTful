@@ -9,6 +9,9 @@ body {
 h1 {
   margin-top: 0;
 }
+.form-wrapper {
+  width: 40%;
+}
 .code {
   width: calc(100%-40px);
   background-color: #202020;
