@@ -14,7 +14,8 @@
 // Route group for API versioning
 Route::group(array('prefix' => 'api/v1'), function()
 {
-    Route::resource('products', 'ProductController');
+    Route::resource('bikes', 'BikeController');
+    Route::resource('wheels', 'WheelController');
 });
 
 Route::get('/', function()
