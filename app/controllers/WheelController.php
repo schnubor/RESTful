@@ -24,7 +24,7 @@ class WheelController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('wheels.create');
 	}
 
 
@@ -47,7 +47,7 @@ class WheelController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$bike = Wheel::find($id)
 	}
 
 

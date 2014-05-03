@@ -12,9 +12,8 @@ class BikeController extends \BaseController {
 		//$bikes = Bike::find(1)->wheels;
 		$bikes = Bike::get();
 
-		$data = json_encode($bikes->toArray());
-
-		return View::make('bikes.index')->with('data', $data);
+		return View::make('bikes.index')
+			->with('response', $bikes);
 	}
 
 
@@ -25,7 +24,7 @@ class BikeController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('bikes.create');
 	}
 
 
@@ -48,7 +47,10 @@ class BikeController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$bikes = Bike::where('id', $id)->take(1)->get();
+
+		return View::make('bikes.single')
+			->with('response', $bikes);
 	}
 
 
