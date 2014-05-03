@@ -10,7 +10,7 @@
 
 @section('content')
   <div class="form-wrapper">
-    {{ Form::open(array('url' => 'api/v1/bikes')) }}
+    {{ Form::open(array('url' => 'bikes')) }}
 
       <div class="form-group">
         {{ Form::label('artikelbezeichnung', 'Artikelbezeichnung') }}

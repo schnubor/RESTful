@@ -10,11 +10,11 @@
 
 @section('content')
   <div class="form-wrapper">
-    {{ Form::open(array('url' => 'api/v1/wheels')) }}
+    {{ Form::open(array('url' => 'wheels')) }}
 
       <div class="form-group">
         {{ Form::label('bike_id', 'Für Fahrrad') }}
-        {{ Form::text('artikelbezeichnung', Input::old('artikelbezeichnung'), array('class' => 'form-control')) }}
+        {{ Form::text('bike_id', Input::old('bike_id'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">

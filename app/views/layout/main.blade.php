@@ -10,13 +10,13 @@
   <div class="container">
     <nav class="navbar navbar-default">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('api/v1/bikes') }}">REST</a>
+        <a class="navbar-brand" href="{{ URL::to('/') }}">REST</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('api/v1/bikes') }}">Alle Bikes</a></li>
-        <li><a href="{{ URL::to('api/v1/bikes/create') }}">Bike anlegen</a></li>
-        <li><a href="{{ URL::to('api/v1/wheels') }}">Alle Wheels</a></li>
-        <li><a href="{{ URL::to('api/v1/wheels/create') }}">Wheel anlegen</a></li>
+        <li><a href="{{ URL::to('bikes') }}">Alle Bikes</a></li>
+        <li><a href="{{ URL::to('bikes/create') }}">Bike anlegen</a></li>
+        <li><a href="{{ URL::to('wheels') }}">Alle Wheels</a></li>
+        <li><a href="{{ URL::to('wheels/create') }}">Wheel anlegen</a></li>
       </ul>
     </nav>
 

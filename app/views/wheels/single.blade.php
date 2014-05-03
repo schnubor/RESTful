@@ -1,11 +1,11 @@
 @extends('layout.main')
 
 @section('title')
-  <title>Alle Wheels</title>
+  <title>Einzelnes Wheel</title>
 @stop
 
 @section('headline')
-  <h1>Alle Wheels</h1>
+  <h1>{{ $response[0]->artikelbezeichnung }}</h1>
 @stop
 
 @section('content')
@@ -34,12 +34,8 @@
           <td>{{ $wheels->produkttyp }}</td>
           <td>{{ $wheels->hersteller }}</td>
           <td>
-            <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheels->id) }}">Show</a>
             <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>
-            {{ Form::open(array('url' => 'wheels/' . $wheels->id, 'class' => 'pull-right')) }}
-              {{ Form::hidden('_method', 'DELETE') }}
-              {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-            {{ Form::close() }}
+            <a class="btn btn-small btn-danger" href="#">Delete</a>
           </td>
         </tr>
       @endforeach

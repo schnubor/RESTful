@@ -34,9 +34,12 @@
             <td>{{ $bikes->produkttyp }}</td>
             <td>{{ $bikes->hersteller }}</td>
             <td>
-              <a class="btn btn-small btn-success" href="{{ URL::to('api/v1/bikes/' . $bikes->id) }}">Show</a>
-              <a class="btn btn-small btn-info" href="{{ URL::to('api/v1/bikes/' . $bikes->id) . '/edit' }}">Edit</a>
-              <a class="btn btn-small btn-danger" href="#">Delete</a>
+              <a class="btn btn-small btn-success" href="{{ URL::to('bikes/' . $bikes->id) }}">Show</a>
+              <a class="btn btn-small btn-info" href="{{ URL::to('bikes/' . $bikes->id) . '/edit' }}">Edit</a>
+              {{ Form::open(array('url' => 'bikes/' . $bikes->id, 'class' => 'pull-right')) }}
+                {{ Form::hidden('_method', 'DELETE') }}
+                {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+              {{ Form::close() }}
             </td>
           </tr>
         @endforeach

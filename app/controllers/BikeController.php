@@ -50,7 +50,7 @@ class BikeController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('api/v1/bikes/create')
+			return Redirect::to('bikes/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
@@ -69,7 +69,7 @@ class BikeController extends \BaseController {
 
 			// redirect
 			Session::flash('message', 'Bike erfolgreich angelegt!');
-			return Redirect::to('api/v1/bikes');
+			return Redirect::to('bikes');
 		}
 	}
 
@@ -121,7 +121,12 @@ class BikeController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$bike = Bike::find($id);
+		$bike->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the bike!');
+		return Redirect::to('bikes');
 	}
 
 

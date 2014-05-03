@@ -49,7 +49,7 @@ class WheelController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('api/v1/wheels/create')
+			return Redirect::to('wheels/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
@@ -69,7 +69,7 @@ class WheelController extends \BaseController {
 
 			// redirect
 			Session::flash('message', 'Wheel erfolgreich angelegt!');
-			return Redirect::to('api/v1/wheels');
+			return Redirect::to('wheels');
 		}
 	}
 
@@ -82,7 +82,10 @@ class WheelController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		
+		$wheels = Wheel::where('id', $id)->take(1)->get();
+
+		return View::make('wheels.single')
+			->with('response', $wheels);
 	}
 
 
@@ -118,7 +121,13 @@ class WheelController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$wheel = Wheel::find($id);
+		$wheel->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the wheel!');
+		return Redirect::to('wheels');
 	}
 
 
