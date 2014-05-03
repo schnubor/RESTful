@@ -23,8 +23,33 @@
       </div>
 
       <div class="form-group">
-        {{ Form::label('price', 'Price') }}
-        {{ Form::text('price', Input::old('price'), array('class' => 'form-control')) }}
+        {{ Form::label('herstellerartikelnummer', 'Herstellerartikelnummer') }}
+        {{ Form::text('herstellerartikelnummer', Input::old('herstellerartikelnummer'), array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('lieferantenname', 'Lieferantenname') }}
+        {{ Form::text('lieferantenname', Input::old('lieferantenname'), array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('lieferantenartikelnummer', 'Lieferantenartikelnummer') }}
+        {{ Form::text('lieferantenartikelnummer', Input::old('lieferantenartikelnummer'), array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('verweis', 'Verweis') }}
+        {{ Form::text('verweis', Input::old('verweis'), array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('gtin', 'GTIN') }}
+        {{ Form::text('gtin', Input::old('gtin'), array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('taric', 'TARIC') }}
+        {{ Form::text('taric', Input::old('taric'), array('class' => 'form-control')) }}
       </div>
 
       {{ Form::submit('Anlegen', array('class' => 'btn btn-primary')) }}

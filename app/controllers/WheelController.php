@@ -11,9 +11,7 @@ class WheelController extends \BaseController {
 	{
 		$wheels = Wheel::get();
 
-		$data = json_encode($wheels->toArray());
-
-		return View::make('wheels.index')->with('data', $data);
+		return View::make('wheels.index')->with('response', $wheels);
 	}
 
 
@@ -35,7 +33,44 @@ class WheelController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		// validate
+		$rules = array(
+			'bike_id' => 'required|numeric',
+			'artikelbezeichnung' => 'required',
+			'hersteller' => 'required',
+			'herstellerartikelnummer' => 'required',
+			'lieferantenname' => 'required',
+			'lieferantenartikelnummer' => 'required',
+			'verweis' => 'required|numeric',
+			'gtin' => 'required',
+			'taric' => 'required|numeric'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+
+		// process the login
+		if ($validator->fails()) {
+			return Redirect::to('api/v1/wheels/create')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			// store
+			$wheel = new Wheel;
+			$wheel->bike_id = Input::get('bike_id');
+			$wheel->artikelbezeichnung = Input::get('artikelbezeichnung');
+			$wheel->produkttyp = 'Laufrad';
+			$wheel->hersteller = Input::get('hersteller');
+			$wheel->herstellerartikelnummer = Input::get('herstellerartikelnummer');
+			$wheel->lieferantenname = Input::get('lieferantenname');
+			$wheel->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$wheel->verweis = Input::get('verweis');
+			$wheel->gtin = Input::get('gtin');
+			$wheel->taric = Input::get('taric');
+			$wheel->save();
+
+			// redirect
+			Session::flash('message', 'Wheel erfolgreich angelegt!');
+			return Redirect::to('api/v1/wheels');
+		}
 	}
 
 
@@ -47,7 +82,7 @@ class WheelController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$bike = Wheel::find($id)
+		
 	}
 
 

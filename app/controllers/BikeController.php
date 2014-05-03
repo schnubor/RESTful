@@ -35,7 +35,42 @@ class BikeController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		// validate
+		$rules = array(
+			'artikelbezeichnung' => 'required',
+			'hersteller' => 'required',
+			'herstellerartikelnummer' => 'required',
+			'lieferantenname' => 'required',
+			'lieferantenartikelnummer' => 'required',
+			'verweis' => 'required|numeric',
+			'gtin' => 'required',
+			'taric' => 'required|numeric'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+
+		// process the login
+		if ($validator->fails()) {
+			return Redirect::to('api/v1/bikes/create')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			// store
+			$bike = new Bike;
+			$bike->artikelbezeichnung = Input::get('artikelbezeichnung');
+			$bike->produkttyp = 'Fahrrad';
+			$bike->hersteller = Input::get('hersteller');
+			$bike->herstellerartikelnummer = Input::get('herstellerartikelnummer');
+			$bike->lieferantenname = Input::get('lieferantenname');
+			$bike->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$bike->verweis = Input::get('verweis');
+			$bike->gtin = Input::get('gtin');
+			$bike->taric = Input::get('taric');
+			$bike->save();
+
+			// redirect
+			Session::flash('message', 'Bike erfolgreich angelegt!');
+			return Redirect::to('api/v1/bikes');
+		}
 	}
 
 

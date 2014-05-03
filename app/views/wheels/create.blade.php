@@ -1,53 +1,64 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Erstellen</title>
-  <?=HTML::style('css/product.css')?>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <nav class="navbar navbar-default">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('api/v1/products') }}">REST</a>
+@extends('layout.main')
+
+@section('title')
+  <title>Wheel anlegen</title>
+@stop
+
+@section('headline')
+  <h1>Wheel anlegen</h1>
+@stop
+
+@section('content')
+  <div class="form-wrapper">
+    {{ Form::open(array('url' => 'api/v1/wheels')) }}
+
+      <div class="form-group">
+        {{ Form::label('bike_id', 'Für Fahrrad') }}
+        {{ Form::text('artikelbezeichnung', Input::old('artikelbezeichnung'), array('class' => 'form-control')) }}
       </div>
-      <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('api/v1/bikes') }}">Alle Bikes</a></li>
-        <li><a href="{{ URL::to('api/v1/bikes/create') }}">Bike anlegen</a></li>
-        <li><a href="{{ URL::to('api/v1/wheels') }}">Alle Wheels</a></li>
-        <li><a href="{{ URL::to('api/v1/wheels/create') }}">Wheel anlegen</a></li>
-      </ul>
-    </nav>
 
-    <h1>Neues Produkt erstellen</h1>
+      <div class="form-group">
+        {{ Form::label('artikelbezeichnung', 'Artikelbezeichnung') }}
+        {{ Form::text('artikelbezeichnung', Input::old('artikelbezeichnung'), array('class' => 'form-control')) }}
+      </div>
 
-    {{ HTML::ul($errors->all()) }}
-    
-    <div class="form-wrapper">
-      {{ Form::open(array('url' => 'api/v1/products')) }}
+      <div class="form-group">
+        {{ Form::label('hersteller', 'Hersteller') }}
+        {{ Form::select('hersteller', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('category'), array('class' => 'form-control')) }}
+      </div>
 
-        <div class="form-group">
-          {{ Form::label('name', 'Name') }}
-          {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
-        </div>
+      <div class="form-group">
+        {{ Form::label('herstellerartikelnummer', 'Herstellerartikelnummer') }}
+        {{ Form::text('herstellerartikelnummer', Input::old('herstellerartikelnummer'), array('class' => 'form-control')) }}
+      </div>
 
-        <div class="form-group">
-          {{ Form::label('category', 'Category') }}
-          {{ Form::select('category', array('0' => 'Select a category', 'Haushalt' => 'Haushalt', 'Auto' => 'Auto', 'Beer' => 'Beer'), Input::old('category'), array('class' => 'form-control')) }}
-        </div>
+      <div class="form-group">
+        {{ Form::label('lieferantenname', 'Lieferantenname') }}
+        {{ Form::text('lieferantenname', Input::old('lieferantenname'), array('class' => 'form-control')) }}
+      </div>
 
-        <div class="form-group">
-          {{ Form::label('price', 'Price') }}
-          {{ Form::text('price', Input::old('price'), array('class' => 'form-control')) }}
-        </div>
+      <div class="form-group">
+        {{ Form::label('lieferantenartikelnummer', 'Lieferantenartikelnummer') }}
+        {{ Form::text('lieferantenartikelnummer', Input::old('lieferantenartikelnummer'), array('class' => 'form-control')) }}
+      </div>
 
-        {{ Form::submit('Create Product', array('class' => 'btn btn-primary')) }}
+      <div class="form-group">
+        {{ Form::label('verweis', 'Verweis') }}
+        {{ Form::text('verweis', Input::old('verweis'), array('class' => 'form-control')) }}
+      </div>
 
-      {{ Form::close() }}
-    </div>
-    
+      <div class="form-group">
+        {{ Form::label('gtin', 'GTIN') }}
+        {{ Form::text('gtin', Input::old('gtin'), array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('taric', 'TARIC') }}
+        {{ Form::text('taric', Input::old('taric'), array('class' => 'form-control')) }}
+      </div>
+
+      {{ Form::submit('Anlegen', array('class' => 'btn btn-primary')) }}
+
+    {{ Form::close() }}
   </div>
-
-</body>
-</html>
+@stop
