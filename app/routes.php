@@ -14,7 +14,7 @@
 // Route group for API versioning
 Route::resource('bikes', 'BikeController');
 Route::resource('wheels', 'WheelController');
-Route::resource('bikes.wheels', 'BikeWheelController');
+Route::resource('bikes.wheels', 'BikesWheelsController');
 
 Route::get('/', function()
 {

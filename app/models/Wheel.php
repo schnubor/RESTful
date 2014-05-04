@@ -3,7 +3,7 @@
 class Wheel extends Eloquent {
   protected $table = 'wheels';
 
-  public function post()
+  public function bike()
   {
       return $this->belongsTo('Bike');
   }

@@ -97,7 +97,10 @@ class WheelController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$wheels = Wheel::find($id);
+
+		return View::make('wheels.edit')
+			->with('wheel', $wheels);
 	}
 
 
@@ -109,7 +112,44 @@ class WheelController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// validate
+		$rules = array(
+			'bike_id' => 'required|numeric',
+			'artikelbezeichnung' => 'required',
+			'hersteller' => 'required',
+			'herstellerartikelnummer' => 'required',
+			'lieferantenname' => 'required',
+			'lieferantenartikelnummer' => 'required',
+			'verweis' => 'required|numeric',
+			'gtin' => 'required',
+			'taric' => 'required|numeric'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+
+		// process the login
+		if ($validator->fails()) {
+			return Redirect::to('wheels/'. $id . 'create')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			// store
+			$wheel = Wheel::find($id);
+			$wheel->bike_id = Input::get('bike_id');
+			$wheel->artikelbezeichnung = Input::get('artikelbezeichnung');
+			$wheel->produkttyp = 'Laufrad';
+			$wheel->hersteller = Input::get('hersteller');
+			$wheel->herstellerartikelnummer = Input::get('herstellerartikelnummer');
+			$wheel->lieferantenname = Input::get('lieferantenname');
+			$wheel->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$wheel->verweis = Input::get('verweis');
+			$wheel->gtin = Input::get('gtin');
+			$wheel->taric = Input::get('taric');
+			$wheel->save();
+
+			// redirect
+			Session::flash('message', 'Wheel erfolgreich editiert!');
+			return Redirect::to('wheels');
+		}
 	}
 
 
