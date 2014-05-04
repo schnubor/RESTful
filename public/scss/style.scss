@@ -1,5 +1,6 @@
 @import 'global';
 @import url(//fonts.googleapis.com/css?family=Lato:700);
+@import url(//fonts.googleapis.com/css?family=Permanent+Marker);
 
 html{
   background-image: linear-gradient(-137deg,#fdac96 0,#fdac95 1%,#fdae94 4%,#ffc784 48%,#008aae 100%);
@@ -18,10 +19,54 @@ body {
   height: 200px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 20%;
   margin-left: -150px;
   margin-top: -100px;
+
+  h1{
+    font-size: 48px;
+    border-bottom: 6px solid white;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  h2{
+    letter-spacing: 10px;
+  }
+
+  .wrapper{
+
+    width: 600px;
+    margin-left: -150px;
+    margin-top: 70px;
+
+    .circle{
+      height: 200px;
+      width: 200px;
+      border-radius: 100px;
+      display: inline-block;
+
+      &.bikes{
+        background-color: #ff5b56;
+        margin-right: 20px;
+      }
+
+      &.wheels{
+        background-color: #67B6B9;
+        margin-left: 20px;
+      }
+
+      a{
+        display: block;
+        color: white;
+        font-size: 24px;
+        line-height: 200px;
+      }
+    }
+  }
 }
+
+
 
 a, a:visited {
   text-decoration:none;
