@@ -1,8 +1,6 @@
 ---
 
-version: 1
-
-strategy: fullsync
+version: 1 
 
 composer:
 
