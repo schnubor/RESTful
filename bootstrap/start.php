@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('christians-imac'),
+	'local' => array('christians-imac', 'christians-mbp'),
 
 ));
 
