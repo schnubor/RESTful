@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'www.smileanddie.com',
-			'database'  => 'd01a5a9e',
-			'username'  => 'd01a5a9e',
-			'password'  => '20willi02',
+			'host'      => 'resteb3.mysql.eu1.frbit.com',
+			'database'  => 'resteb3',
+			'username'  => 'resteb3',
+			'password'  => 'JWNuhigj9QROIXJQ',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

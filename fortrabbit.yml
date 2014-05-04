@@ -7,9 +7,3 @@ strategy: fullsync
 composer:
   mode: always
   method: install
-
-pre-deploy:
-
-  script: artisan
-  args:
-    - migrate
