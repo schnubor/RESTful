@@ -14,34 +14,34 @@ class CreateBikeTable extends Migration {
 	{
 		if(!Schema::hasTable('bikes')){
 			Schema::create('bikes', function(Blueprint $table){
-				$table->increments('ID');
-				$table->string('Artikelbezeichnung');
-				$table->string('Produkttyp');
-				$table->string('Hersteller');
-				$table->string('Herstellerartikelnummer');
-				$table->string('Lieferantenname');
-				$table->string('Lieferantenartikelnummer');
-				$table->string('Verweis');
-				$table->string('GTIN');
-				$table->integer('TARIC');
+				$table->increments('id');
+				$table->string('artikelbezeichnung');
+				$table->string('produkttyp');
+				$table->string('hersteller');
+				$table->string('herstellerartikelnummer');
+				$table->string('lieferantenname');
+				$table->string('lieferantenartikelnummer');
+				$table->string('verweis');
+				$table->string('gtin');
+				$table->integer('taric');
 				$table->timestamps();
 			});
 		}
 
 		if(!Schema::hasTable('wheels')){
 			Schema::create('wheels', function(Blueprint $table){
-				$table->increments('ID');
-				$table->integer('Bike_ID');
-				$table->string('Artikelbezeichnung');
-				$table->string('Produkttyp');
-				$table->string('Hersteller');
-				$table->string('Herstellerartikelnummer');
-				$table->string('Lieferantenname');
-				$table->string('Lieferantenartikelnummer');
-				$table->string('Verweis');
-				$table->string('Verwendung');
-				$table->string('GTIN');
-				$table->integer('TARIC');
+				$table->increments('id');
+				$table->integer('bike_id');
+				$table->string('artikelbezeichnung');
+				$table->string('produkttyp');
+				$table->string('hersteller');
+				$table->string('herstellerartikelnummer');
+				$table->string('lieferantenname');
+				$table->string('lieferantenartikelnummer');
+				$table->string('verweis');
+				$table->string('verwendung');
+				$table->string('gtin');
+				$table->integer('taric');
 				$table->timestamps();
 			});
 		}
@@ -55,6 +55,7 @@ class CreateBikeTable extends Migration {
 	public function down()
 	{
 		Schema::dropIfExists('bikes');
+		Schema::dropIfExists('wheels');
 	}
 
 }
