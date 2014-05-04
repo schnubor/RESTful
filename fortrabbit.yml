@@ -4,7 +4,7 @@ version: 1
 
 strategy: fullsync
 
-composer
+composer:
 
     mode: always
     method: install
