@@ -40,7 +40,7 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |--------------------------------------------------------------------------
 */
 
-// SassCompiler::run("public/scss/", "public/css/");
+SassCompiler::run("public/scss/", "public/css/");
 
 /*
 |--------------------------------------------------------------------------
