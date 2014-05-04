@@ -7,5 +7,4 @@ strategy: fullsync
 composer
 
     mode: always
-
-    method: update
+    method: install
