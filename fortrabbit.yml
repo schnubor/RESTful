@@ -1,5 +1,9 @@
 ---
+
 version: 1
+
+strategy: fullsync
+
 composer
 
     # make sure composer runs after each push
