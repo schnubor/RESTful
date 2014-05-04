@@ -35,7 +35,6 @@
           <td>{{ $wheels->hersteller }}</td>
           <td>
             <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>
-            <a class="btn btn-small btn-danger" href="#">Delete</a>
           </td>
         </tr>
       @endforeach
