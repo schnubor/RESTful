@@ -1,0 +1,9 @@
+---
+version: 1
+composer
+
+    # make sure composer runs after each push
+    mode: always
+
+    # make composer use install, not update
+    method: install
