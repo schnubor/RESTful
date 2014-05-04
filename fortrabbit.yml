@@ -6,8 +6,6 @@ strategy: fullsync
 
 composer
 
-    # make sure composer runs after each push
     mode: always
 
-    # make composer use install, not update
-    method: install
+    method: update
