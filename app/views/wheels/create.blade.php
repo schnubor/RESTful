@@ -5,7 +5,7 @@
 @stop
 
 @section('headline')
-  <h1>Wheel anlegen</h1>
+  <h1>Wheel anlegen <span class="method">POST</span></h1>
 @stop
 
 @section('content')
