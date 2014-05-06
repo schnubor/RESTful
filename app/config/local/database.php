@@ -54,7 +54,7 @@ return array(
 
     'mysql' => array(
       'driver'    => 'mysql',
-      'host'      => 'www.smileanddie.com',
+      'host'      => 'smileanddie.com',
       'database'  => 'd01a5a9e',
       'username'  => 'd01a5a9e',
       'password'  => '20willi02',
