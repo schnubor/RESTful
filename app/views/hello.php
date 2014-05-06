@@ -17,7 +17,7 @@
 	</div>
 
   <footer>
-    <p class="info">Christian Korndörfer &#8226; CMM2012 &#8226; EB3</p>
+    <p class="info">Christian Korndörfer &#8226; CMM2012 &#8226; EB3 </p>
   </footer>
 
   
