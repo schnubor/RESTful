@@ -5,7 +5,7 @@
 @stop
 
 @section('headline')
-  <h1>Bike editieren</h1>
+  <h1>Bike editieren <span class="method">UPDATE/PATCH</span></h1>
 @stop
 
 @section('content')

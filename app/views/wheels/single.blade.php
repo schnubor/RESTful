@@ -23,6 +23,12 @@
         <th>Artikelbezeichnung</th>
         <th>Produkttyp</th>
         <th>Hersteller</th>
+        <th>Hanr.</th>
+        <th>Lieferant</th>
+        <th>Lanr.</th>
+        <th>GTIN</th>
+        <th>TARIC</th>
+        <th>Verweis</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -33,6 +39,12 @@
           <td>{{ $wheels->artikelbezeichnung }}</td>
           <td>{{ $wheels->produkttyp }}</td>
           <td>{{ $wheels->hersteller }}</td>
+          <td>{{ $wheels->herstellerartikelnummer }}</td>
+          <td>{{ $wheels->lieferantenname }}</td>
+          <td>{{ $wheels->lieferantenartikelnummer }}</td>
+          <td>{{ $wheels->gtin }}</td>
+          <td>{{ $wheels->taric }}</td>
+          <td><a href="{{ URL::to('wheels/' . $wheels->verweis) }}">{{ $wheels->verweis }}</a></td>
           <td>
             <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>
           </td>
