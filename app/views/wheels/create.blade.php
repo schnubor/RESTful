@@ -14,7 +14,14 @@
 
       <div class="form-group">
         {{ Form::label('bike_id', 'Für Fahrrad') }}
-        {{ Form::text('bike_id', Input::old('bike_id'), array('class' => 'form-control')) }}
+
+        <? $bikes_array = array(); ?>
+
+        @foreach($bikes as $bike)
+          <? $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
+        @endforeach
+
+        {{ Form::select('bike_id', $bikes_array, Input::old('bike_id'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
@@ -24,7 +31,7 @@
 
       <div class="form-group">
         {{ Form::label('hersteller', 'Hersteller') }}
-        {{ Form::select('hersteller', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('category'), array('class' => 'form-control')) }}
+        {{ Form::select('hersteller', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('hersteller '), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
