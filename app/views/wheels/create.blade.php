@@ -18,7 +18,7 @@
         <?php $bikes_array = array(); ?>
 
         @foreach($bikes as $bike)
-          <? $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
+          <?php $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
         @endforeach
 
         {{ Form::select('bike_id', $bikes_array, Input::old('bike_id'), array('class' => 'form-control')) }}
