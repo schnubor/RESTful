@@ -15,7 +15,7 @@
       <div class="form-group">
         {{ Form::label('bike_id', 'Für Fahrrad') }}
 
-        <? $bikes_array = array(); ?>
+        <?php $bikes_array = array(); ?>
 
         @foreach($bikes as $bike)
           <? $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
