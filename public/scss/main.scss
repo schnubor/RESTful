@@ -19,16 +19,24 @@ h1{
 .code{
   width: calc(100%-40px);
   background-color: $grey;
-  color: white;
+  color: $green;
   padding: 10px;
   border-radius: 4px;
   word-wrap: break-word;
+  height: 50px;
+  overflow-x: auto;
+  white-space: nowrap;
 
   p{
     padding: 0;
     margin: 0;
-    font-family: Courier;
+    line-height: 30px;
+    font-family: Monaco, sans-serif;
   }
+}
+
+#jsontree{
+  margin-top: 20px;
 }
 
 span.method{

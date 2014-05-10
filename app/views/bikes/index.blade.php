@@ -16,6 +16,9 @@
     </div>
 
     <h3>JSON Response visualisiert</h3>
+    <div id="jsontree"></div>
+
+    <h3>Beispielhafte Darstellung als Tabelle</h3>
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -57,4 +60,10 @@
         @endforeach
       </tbody>
     </table>
+@stop
+
+@section('scripts')
+  <script>
+    $('#jsontree').jsontree('{{ $response }}');
+  </script>
 @stop

@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   @yield('title')
-  <?=HTML::style('css/main.css')?>
+  {{ HTML::style('css/main.css') }}
+  {{ HTML::style('css/jsontree.css') }}
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  {{ HTML::script('js/jsontree.js') }}
 </head>
 <body>
   <div class="container">
@@ -28,6 +31,8 @@
     @yield('content')
 
   </div>
+
+  @yield('scripts')
 
 </body>
 </html>
