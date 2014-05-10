@@ -23,7 +23,11 @@ class WheelController extends \BaseController {
 	public function create()
 	{
 		$bikes = Bike::get();
-		return View::make('wheels.create')->with('bikes', $bikes);
+		$wheels = Wheel::get();
+
+		$data = array('bikes' => $bikes, 'wheels' => $wheels);
+
+		return View::make('wheels.create', $data);
 	}
 
 

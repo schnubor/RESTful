@@ -8,19 +8,25 @@
   <h1>Wheel anlegen <span class="method">POST</span></h1>
 @stop
 
+<?php
+  $bikes_array = array(); 
+  $wheels_array = array();
+?>
+
+@foreach($bikes as $bike)
+  <?php $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
+@endforeach
+
+@foreach($wheels as $wheel)
+  <?php $wheels_array[$wheel->id] = $wheel->artikelbezeichnung; ?>
+@endforeach
+
 @section('content')
   <div class="form-wrapper">
     {{ Form::open(array('url' => 'wheels')) }}
 
       <div class="form-group">
         {{ Form::label('bike_id', 'Für Fahrrad') }}
-
-        <?php $bikes_array = array(); ?>
-
-        @foreach($bikes as $bike)
-          <?php $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
-        @endforeach
-
         {{ Form::select('bike_id', $bikes_array, Input::old('bike_id'), array('class' => 'form-control')) }}
       </div>
 
@@ -51,7 +57,7 @@
 
       <div class="form-group">
         {{ Form::label('verweis', 'Verweis') }}
-        {{ Form::text('verweis', Input::old('verweis'), array('class' => 'form-control')) }}
+        {{ Form::select('verweis', $wheels_array, Input::old('verweis'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">

@@ -8,6 +8,14 @@
   <h1>Bike anlegen <span class="method">POST</span></h1>
 @stop
 
+<?php 
+  $bikes_array = array();  
+?>
+
+@foreach($bikes as $bike)
+  <?php $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
+@endforeach
+
 @section('content')
   <div class="form-wrapper">
     {{ Form::open(array('url' => 'bikes')) }}
@@ -19,7 +27,7 @@
 
       <div class="form-group">
         {{ Form::label('hersteller', 'Hersteller') }}
-        {{ Form::select('hersteller', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('category'), array('class' => 'form-control')) }}
+        {{ Form::select('hersteller', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('hersteller'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
@@ -39,7 +47,7 @@
 
       <div class="form-group">
         {{ Form::label('verweis', 'Verweis') }}
-        {{ Form::text('verweis', Input::old('verweis'), array('class' => 'form-control')) }}
+        {{ Form::select('verweis', $bikes_array, Input::old('verweis'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
