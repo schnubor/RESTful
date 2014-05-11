@@ -66,6 +66,6 @@
 
 @section('scripts')
   <script>
-    $('#jsontree').jsontree('{{ $wheel }}');
+    $('#jsontree').jsontree('{{ $wheels }}');
   </script>
 @stop
