@@ -9,11 +9,17 @@ class BikeController extends \BaseController {
 	 */
 	public function index()
 	{
-		//$bikes = Bike::find(1)->wheels;
 		$bikes = Bike::get();
 
-		return View::make('bikes.index')
-			->with('response', $bikes);
+		foreach($bikes as $bike){
+			$verweis = new Verweis();
+			$verweis->verweis_id = $bike->verweis;
+			$verweis->href = URL::to('bikes/'. $bike->verweis);
+			$bike->verweis = $verweis;
+		}
+		
+
+		return View::make('bikes.index')->with('response', $bikes);
 	}
 
 
@@ -84,9 +90,16 @@ class BikeController extends \BaseController {
 	public function show($id)
 	{
 		$bikes = Bike::where('id', $id)->take(1)->get();
+		$allBikes = Bike::get();
 
-		return View::make('bikes.single')
-			->with('response', $bikes);
+		$verweis = new Verweis();
+		$verweis->verweis_id = $bikes[0]->verweis;
+		$verweis->href = URL::to('bikes/'. $bikes[0]->verweis);
+		$bikes[0]->verweis = $verweis;
+
+		$data = array('response' => $bikes, 'allBikes' => $allBikes);
+
+		return View::make('bikes.single', $data);
 	}
 
 

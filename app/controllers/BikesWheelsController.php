@@ -10,9 +10,17 @@ class BikesWheelsController extends \BaseController {
 	public function index($id)
 	{
 		$bike = Bike::find($id);
-		$wheels = Bike::find($id)->wheels;
+		$bikeWheels = Bike::find($id)->wheels;
+		$allWheels = Wheel::get();
 
-		$data = array('bike' => $bike, 'wheels' => $wheels);
+		foreach($bikeWheels as $bikeWheel){
+			$verweis = new Verweis();
+			$verweis->verweis_id = $bikeWheel->verweis;
+			$verweis->href = URL::to('wheels/' . $bikeWheel->verweis);
+			$bikeWheel->verweis =  $verweis;	
+		}
+
+		$data = array('bike' => $bike, 'wheels' => $bikeWheels, 'allWheels' => $allWheels);
 
 		return View::make('bikewheels.index', $data);
 	}

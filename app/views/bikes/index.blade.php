@@ -30,7 +30,7 @@
           <th>Lieferant</th>
           <th>Lanr.</th>
           <th>GTIN</th>
-          <th>TARIC</th>
+          <th>TARIC (Zolltarifnr.)</th>
           <th>Verweis</th>
           <th>Actions</th>
         </tr>
@@ -47,7 +47,7 @@
             <td>{{ $bikes->lieferantenartikelnummer }}</td>
             <td>{{ $bikes->gtin }}</td>
             <td>{{ $bikes->taric }}</td>
-            <td><a href="{{ URL::to('bikes/' . $bikes->verweis) }}">{{ $bikes->verweis }}</a></td>
+            <td><a href="{{ $bikes->verweis->href }}">{{ $response[$bikes->verweis->verweis_id-1]->artikelbezeichnung }}</a></td>
             <td>
               <a class="btn btn-small btn-success" href="{{ URL::to('bikes/' . $bikes->id) }}">Show</a>
               <a class="btn btn-small btn-info" href="{{ URL::to('bikes/' . $bikes->id) . '/edit' }}">Edit</a>

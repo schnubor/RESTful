@@ -16,6 +16,9 @@
   </div>
 
   <h3>JSON Response visualisiert</h3>
+  <div id="jsontree"></div>
+
+  <h3>Beispielhafte Darstellung als Tabelle</h3>
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
@@ -44,7 +47,7 @@
           <td>{{ $bikes->lieferantenartikelnummer }}</td>
           <td>{{ $bikes->gtin }}</td>
           <td>{{ $bikes->taric }}</td>
-          <td><a href="{{ URL::to('bikes/' . $bikes->verweis) }}">{{ $bikes->verweis }}</a></td>
+          <td><a href="{{ $bikes->verweis->href }}">{{ $allBikes[$bikes->verweis->verweis_id-1]->artikelbezeichnung }}</a></td>
           <td>
             <a class="btn btn-small btn-info" href="{{ URL::to('bikes/' . $bikes->id) . '/edit' }}">Edit</a>
           </td>
@@ -52,4 +55,10 @@
       @endforeach
     </tbody>
   </table>
+@stop
+
+@section('scripts')
+  <script>
+    $('#jsontree').jsontree('{{ $response }}');
+  </script>
 @stop

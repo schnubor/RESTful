@@ -11,6 +11,13 @@ class WheelController extends \BaseController {
 	{
 		$wheels = Wheel::get();
 
+		foreach($wheels as $wheel){
+			$verweis = new Verweis();
+			$verweis->verweis_id = $wheel->verweis;
+			$verweis->href = URL::to('wheels/'. $wheel->verweis);
+			$wheel->verweis = $verweis;
+		}
+
 		return View::make('wheels.index')->with('response', $wheels);
 	}
 
@@ -88,9 +95,16 @@ class WheelController extends \BaseController {
 	public function show($id)
 	{
 		$wheels = Wheel::where('id', $id)->take(1)->get();
+		$allWheels = Wheel::get();
 
-		return View::make('wheels.single')
-			->with('response', $wheels);
+		$verweis = new Verweis();
+		$verweis->verweis_id = $wheels[0]->verweis;
+		$verweis->href = URL::to('wheels/'. $wheels[0]->verweis);
+		$wheels[0]->verweis = $verweis;
+
+		$data = array('response' => $wheels, 'allWheels' => $allWheels);
+
+		return View::make('wheels.single', $data);
 	}
 
 

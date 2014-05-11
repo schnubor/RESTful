@@ -47,7 +47,7 @@
           <td>{{ $wheels->lieferantenartikelnummer }}</td>
           <td>{{ $wheels->gtin }}</td>
           <td>{{ $wheels->taric }}</td>
-          <td><a href="{{ URL::to('wheels/' . $wheels->verweis) }}">{{ $wheels->verweis }}</a></td>
+          <td><a href="{{ $wheels->verweis->href }}">{{ $response[$wheels->verweis->verweis_id-1]->artikelbezeichnung }}</a></td>
           <td>
             <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheels->id) }}">Show</a>
             <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>
