@@ -11,9 +11,9 @@
 @section('content')
   <h3>JSON Response <span class="method">GET</span></h3>
 
-  <div class="code">
-    <p>{{ $response }}</p>
-  </div>
+  <pre>
+    <code>{{ $response }}</code>
+  </pre>
 
   <h3>JSON Response visualisiert</h3>
   <div id="jsontree"></div>
@@ -37,6 +37,19 @@
     </thead>
     <tbody>
       @foreach($response as $wheels)
+
+        <?php
+          $verweis_item = null;
+
+          // Loop through response array (all the wheels) and find the wheel that matches the current verweis_id
+          foreach($response as $wheel) {
+            if ($wheels->verweis->verweis_id == $wheel->id) {
+              $verweis_item = $wheel;
+              break;
+            }
+          }        
+        ?>  
+
         <tr>
           <td>{{ $wheels->id }}</td>
           <td>{{ $wheels->artikelbezeichnung }}</td>
@@ -47,7 +60,7 @@
           <td>{{ $wheels->lieferantenartikelnummer }}</td>
           <td>{{ $wheels->gtin }}</td>
           <td>{{ $wheels->taric }}</td>
-          <td><a href="{{ $wheels->verweis->href }}">{{ $response[$wheels->verweis->verweis_id-1]->artikelbezeichnung }}</a></td>
+          <td><a href="{{ $wheels->verweis->href }}">{{ $verweis_item->artikelbezeichnung }}</a></td>
           <td>
             <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheels->id) }}">Show</a>
             <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>

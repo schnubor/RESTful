@@ -20,7 +20,7 @@ class BikesWheelsController extends \BaseController {
 			$bikeWheel->verweis =  $verweis;	
 		}
 
-		$data = array('bike' => $bike, 'wheels' => $bikeWheels, 'allWheels' => $allWheels);
+		$data = array('bike' => $bike, 'response' => $bikeWheels, 'allWheels' => $allWheels);
 
 		return View::make('bikewheels.index', $data);
 	}

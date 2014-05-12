@@ -12,22 +12,12 @@ h1 {
 .form-wrapper {
   width: 40%;
 }
-.code {
-  width: calc(100%-40px);
-  background-color: #202020;
-  color: #5bec78;
-  padding: 10px;
-  border-radius: 4px;
-  word-wrap: break-word;
-  height: 50px;
-  overflow-x: auto;
-  white-space: nowrap;
+pre {
+  overflow: auto;
+  white-space: nowrap !important;
 }
-.code p {
-  padding: 0;
-  margin: 0;
-  line-height: 30px;
-  font-family: Monaco, sans-serif;
+pre code {
+  white-space: nowrap !important;
 }
 #jsontree {
   margin-top: 20px;

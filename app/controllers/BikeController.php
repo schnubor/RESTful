@@ -112,9 +112,11 @@ class BikeController extends \BaseController {
 	public function edit($id)
 	{
 		$bikes = Bike::find($id);
+		$allBikes = Bike::get();
 
-		return View::make('bikes.edit')
-			->with('bike', $bikes);
+		$data = array('bike' => $bikes, 'allBikes' => $allBikes);
+		
+		return View::make('bikes.edit', $data);
 	}
 
 

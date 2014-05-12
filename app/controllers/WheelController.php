@@ -117,9 +117,13 @@ class WheelController extends \BaseController {
 	public function edit($id)
 	{
 		$wheels = Wheel::find($id);
+		$allWheels = Wheel::get();
+		$bikes = Bike::get();
 
-		return View::make('wheels.edit')
-			->with('wheel', $wheels);
+		$data = array('wheels' => $wheels, 'bikes' => $bikes, 'allWheels' => $allWheels);
+
+		return View::make('wheels.edit', $data);
+			
 	}
 
 

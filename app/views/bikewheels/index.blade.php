@@ -11,9 +11,9 @@
 @section('content')
   <h3>JSON Response <span class="method">GET</span></h3>
 
-    <div class="code">
-      <p>{{ $wheels }}</p>
-    </div>
+    <pre>
+      <code>{{ $response }}</code>
+    </pre>
 
     <h3>JSON Response visualisiert</h3>
     <div id="jsontree"></div>
@@ -32,28 +32,41 @@
           <th>GTIN</th>
           <th>TARIC</th>
           <th>Verweis</th>
-          <th>Bike</th>
+          <th>Für Bike</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($wheels as $wheel)
+        @foreach($response as $wheels)
+
+          <?php
+            $verweis_item = null;
+
+            // Loop through response array (all the wheels) and find the wheel that matches the current verweis_id
+            foreach($allWheels as $wheel) {
+              if ($wheels->verweis->verweis_id == $wheel->id) {
+                $verweis_item = $wheel;
+                break;
+              }
+            }        
+          ?>  
+
           <tr>
-            <td>{{ $wheel->id }}</td>
-            <td>{{ $wheel->artikelbezeichnung }}</td>
-            <td>{{ $wheel->produkttyp }}</td>
-            <td>{{ $wheel->hersteller }}</td>
-            <td>{{ $wheel->herstellerartikelnummer }}</td>
-            <td>{{ $wheel->lieferantenname }}</td>
-            <td>{{ $wheel->lieferantenartikelnummer }}</td>
-            <td>{{ $wheel->gtin }}</td>
-            <td>{{ $wheel->taric }}</td>
-            <td><a href="{{ $wheel->verweis->href }}">{{ $allWheels[$wheel->verweis->verweis_id-1]->artikelbezeichnung }}</a></td>
+            <td>{{ $wheels->id }}</td>
+            <td>{{ $wheels->artikelbezeichnung }}</td>
+            <td>{{ $wheels->produkttyp }}</td>
+            <td>{{ $wheels->hersteller }}</td>
+            <td>{{ $wheels->herstellerartikelnummer }}</td>
+            <td>{{ $wheels->lieferantenname }}</td>
+            <td>{{ $wheels->lieferantenartikelnummer }}</td>
+            <td>{{ $wheels->gtin }}</td>
+            <td>{{ $wheels->taric }}</td>
+            <td><a href="{{ $wheels->verweis->href }}">{{ $verweis_item->artikelbezeichnung }}</a></td>
             <td><a href="{{ URL::to('bikes/' . $bike->id) }}">{{ $bike->artikelbezeichnung }}</a></td>
             <td>
-              <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheel->id) }}">Show</a>
-              <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheel->id) . '/edit' }}">Edit</a>
-              {{ Form::open(array('url' => 'wheels/' . $wheel->id, 'class' => 'pull-right')) }}
+              <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheels->id) }}">Show</a>
+              <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>
+              {{ Form::open(array('url' => 'wheels/' . $wheels->id, 'class' => 'pull-right')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
                 {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
               {{ Form::close() }}
@@ -66,6 +79,6 @@
 
 @section('scripts')
   <script>
-    $('#jsontree').jsontree('{{ $wheels }}');
+    $('#jsontree').jsontree('{{ $response }}');
   </script>
 @stop
