@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"te",
+				"text-align"
+			],
+			[
 				"webkit-fo",
 				"webkit-font-smoothing"
 			],
@@ -143,13 +147,25 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/bikewheels/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 2690,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 307.0,
+		"height": 47.0,
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"pref",
 				"Preferences: Settings - Default"
@@ -180,6 +196,31 @@
 	},
 	"file_history":
 	[
+		"/Users/christiankorndoerfer/Projekte/restful/app/views/bikes/index.blade.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/controllers/WheelController.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/controllers/BikesWheelsController.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/views/bikewheels/index.blade.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/views/wheels/create.blade.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/controllers/BikeController.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/views/bikes/create.blade.php",
+		"/Users/christiankorndoerfer/Projekte/restful/vendor/predis/predis/bin/create-pear",
+		"/Users/christiankorndoerfer/Projekte/restful/vendor/phpseclib/phpseclib/build/code-sniffer-ruleset.xml",
+		"/Users/christiankorndoerfer/Projekte/restful/composer.json",
+		"/Users/christiankorndoerfer/Projekte/restful/app/views/wheels/index.blade.php",
+		"/Users/christiankorndoerfer/Projekte/restful/public/index.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/models/Bike.php",
+		"/Users/christiankorndoerfer/Projekte/restful/vendor/phpseclib/phpseclib/phpseclib/Math/BigInteger.php",
+		"/Users/christiankorndoerfer/Projekte/restful/Boxfile",
+		"/Users/christiankorndoerfer/Projekte/restful/app/models/Wheel.php",
+		"/Users/christiankorndoerfer/Projekte/restful/vendor/symfony/css-selector/Symfony/Component/CssSelector/Parser/Handler/WhitespaceHandler.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/config/workbench.php",
+		"/Users/christiankorndoerfer/Projekte/restful/bootstrap/start.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/config/local/database.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/config/database.php",
+		"/Users/christiankorndoerfer/Projekte/restful/app/views/hello.php",
+		"/Users/christiankorndoerfer/Projekte/restful/public/scss/style.scss",
+		"/Users/christiankorndoerfer/Projekte/restful/app/config/app.php",
+		"/Users/christiankorndoerfer/Projekte/restful/vendor/predis/predis/lib/Predis/Command/HashExists.php",
 		"/Users/christiankorndoerfer/Projekte/Websites/RESTful/bootstrap/start.php",
 		"/Users/christiankorndoerfer/Projekte/Websites/RESTful/app/config/database.php",
 		"/Users/christiankorndoerfer/Projekte/Websites/RESTful/vendor/nesbot/carbon/tests/SubTest.php",
@@ -284,8 +325,40 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/bikewheels/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2285,
+								2285
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 454.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -336,6 +409,26 @@
 		"selected_items":
 		[
 			[
+				"index",
+				"app/views/bikewheels/index.blade.php"
+			],
+			[
+				"bik",
+				"app/controllers/BikeController.php"
+			],
+			[
+				"crea",
+				"app/views/wheels/create.blade.php"
+			],
+			[
+				"whee",
+				"app/controllers/WheelController.php"
+			],
+			[
+				"hello",
+				"app/views/hello.php"
+			],
+			[
 				"start",
 				"bootstrap/start.php"
 			],
@@ -354,10 +447,6 @@
 			[
 				"main",
 				"js/main.js"
-			],
-			[
-				"index",
-				"index.html"
 			],
 			[
 				"vinyl",
