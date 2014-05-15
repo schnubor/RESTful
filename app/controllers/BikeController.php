@@ -44,14 +44,14 @@ class BikeController extends \BaseController {
 	{
 		// validate
 		$rules = array(
-			'artikelbezeichnung' => 'required',
-			'hersteller' => 'required',
-			'herstellerartikelnummer' => 'required',
-			'lieferantenname' => 'required',
-			'lieferantenartikelnummer' => 'required',
+			'AAP805' => 'required',
+			'AAO677' => 'required',
+			'AAO676' => 'required',
+			'AAO735' => 'required',
+			'AAO736' => 'required',
 			'verweis' => 'required|numeric',
-			'gtin' => 'required',
-			'taric' => 'required|numeric'
+			'AAO663' => 'required',
+			'AAD931' => 'required|numeric'
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -63,15 +63,15 @@ class BikeController extends \BaseController {
 		} else {
 			// store
 			$bike = new Bike;
-			$bike->artikelbezeichnung = Input::get('artikelbezeichnung');
-			$bike->produkttyp = 'Fahrrad';
-			$bike->hersteller = Input::get('hersteller');
-			$bike->herstellerartikelnummer = Input::get('herstellerartikelnummer');
-			$bike->lieferantenname = Input::get('lieferantenname');
-			$bike->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$bike->AAP805 = Input::get('AAP805');
+			$bike->AAF542 = 'Fahrrad';
+			$bike->AAO677 = Input::get('AAO677');
+			$bike->AAO676 = Input::get('AAO676');
+			$bike->AAO735 = Input::get('AAO735');
+			$bike->AAO736 = Input::get('AAO736');
 			$bike->verweis = Input::get('verweis');
-			$bike->gtin = Input::get('gtin');
-			$bike->taric = Input::get('taric');
+			$bike->AAO663 = Input::get('AAO663');
+			$bike->AAD931 = Input::get('AAD931');
 			$bike->save();
 
 			// redirect
@@ -130,14 +130,14 @@ class BikeController extends \BaseController {
 	{
 		// validate
 		$rules = array(
-			'artikelbezeichnung' => 'required',
-			'hersteller' => 'required',
-			'herstellerartikelnummer' => 'required',
-			'lieferantenname' => 'required',
-			'lieferantenartikelnummer' => 'required',
+			'AAP805' => 'required',
+			'AAO677' => 'required',
+			'AAO676' => 'required',
+			'AAO735' => 'required',
+			'AAO736' => 'required',
 			'verweis' => 'required|numeric',
-			'gtin' => 'required',
-			'taric' => 'required|numeric'
+			'AAO663' => 'required',
+			'AAD931' => 'required|numeric'
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -149,15 +149,15 @@ class BikeController extends \BaseController {
 		} else {
 			// store
 			$bike = Bike::find($id);
-			$bike->artikelbezeichnung = Input::get('artikelbezeichnung');
-			$bike->produkttyp = 'Fahrrad';
-			$bike->hersteller = Input::get('hersteller');
-			$bike->herstellerartikelnummer = Input::get('herstellerartikelnummer');
-			$bike->lieferantenname = Input::get('lieferantenname');
-			$bike->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$bike->AAP805 = Input::get('AAP805');
+			$bike->AAF542 = 'Fahrrad';
+			$bike->AAO677 = Input::get('AAO677');
+			$bike->AAO676 = Input::get('AAO676');
+			$bike->AAO735 = Input::get('AAO735');
+			$bike->AAO736 = Input::get('AAO736');
 			$bike->verweis = Input::get('verweis');
-			$bike->gtin = Input::get('gtin');
-			$bike->taric = Input::get('taric');
+			$bike->AAO663 = Input::get('AAO663');
+			$bike->AAD931 = Input::get('AAD931');
 			$bike->save();
 
 			// redirect
