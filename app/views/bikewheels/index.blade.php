@@ -1,11 +1,11 @@
 @extends('layout.main')
 
 @section('title')
-  <title>Wheels von {{ $bike->artikelbezeichnung }}</title>
+  <title>Wheels von {{ $bike->AAP805 }}</title>
 @stop
 
 @section('headline')
-  <h1>Wheels von {{ $bike->artikelbezeichnung }}</h1>
+  <h1>Wheels von {{ $bike->AAP805 }}</h1>
 @stop
 
 @section('content')
@@ -53,16 +53,16 @@
 
           <tr>
             <td>{{ $wheels->id }}</td>
-            <td>{{ $wheels->artikelbezeichnung }}</td>
-            <td>{{ $wheels->produkttyp }}</td>
-            <td>{{ $wheels->hersteller }}</td>
-            <td>{{ $wheels->herstellerartikelnummer }}</td>
-            <td>{{ $wheels->lieferantenname }}</td>
-            <td>{{ $wheels->lieferantenartikelnummer }}</td>
-            <td>{{ $wheels->gtin }}</td>
-            <td>{{ $wheels->taric }}</td>
-            <td><a href="{{ $wheels->verweis->href }}">{{ $verweis_item->artikelbezeichnung }}</a></td>
-            <td><a href="{{ URL::to('bikes/' . $bike->id) }}">{{ $bike->artikelbezeichnung }}</a></td>
+            <td>{{ $wheels->AAP805 }}</td>
+            <td>{{ $wheels->AAF542 }}</td>
+            <td>{{ $wheels->AAO677 }}</td>
+            <td>{{ $wheels->AAO676 }}</td>
+            <td>{{ $wheels->AAO735 }}</td>
+            <td>{{ $wheels->AAO736 }}</td>
+            <td>{{ $wheels->AAO663 }}</td>
+            <td>{{ $wheels->AAD931 }}</td>
+            <td><a href="{{ $wheels->verweis->href }}">{{ $verweis_item->AAP805 }}</a></td>
+            <td><a href="{{ URL::to('bikes/' . $bike->id) }}">{{ $bike->AAP805 }}</a></td>
             <td>
               <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheels->id) }}">Show</a>
               <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>

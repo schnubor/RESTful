@@ -5,7 +5,7 @@
 @stop
 
 @section('headline')
-  <h1>{{ $response[0]->artikelbezeichnung }}</h1>
+  <h1>{{ $response[0]->AAP805 }}</h1>
 @stop
 
 @section('content')
@@ -52,15 +52,15 @@
 
         <tr>
           <td>{{ $bikes->id }}</td>
-          <td>{{ $bikes->artikelbezeichnung }}</td>
-          <td>{{ $bikes->produkttyp }}</td>
-          <td>{{ $bikes->hersteller }}</td>
-          <td>{{ $bikes->herstellerartikelnummer }}</td>
-          <td>{{ $bikes->lieferantenname }}</td>
-          <td>{{ $bikes->lieferantenartikelnummer }}</td>
-          <td>{{ $bikes->gtin }}</td>
-          <td>{{ $bikes->taric }}</td>
-          <td><a href="{{ $bikes->verweis->href }}">{{ $verweis_item->artikelbezeichnung }}</a></td>
+          <td>{{ $bikes->AAP805 }}</td>
+          <td>{{ $bikes->AAF542 }}</td>
+          <td>{{ $bikes->AAO677 }}</td>
+          <td>{{ $bikes->AAO676 }}</td>
+          <td>{{ $bikes->AAO735 }}</td>
+          <td>{{ $bikes->AAO736 }}</td>
+          <td>{{ $bikes->AAO663 }}</td>
+          <td>{{ $bikes->AAD931 }}</td>
+          <td><a href="{{ $bikes->verweis->href }}">{{ $verweis_item->AAP805 }}</a></td>
           <td>
             <a class="btn btn-small btn-info" href="{{ URL::to('bikes/' . $bikes->id) . '/edit' }}">Edit</a>
           </td>
