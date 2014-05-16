@@ -14,11 +14,11 @@
 ?>
 
 @foreach($bikes as $bike)
-  <?php $bikes_array[$bike->id] = $bike->artikelbezeichnung; ?>
+  <?php $bikes_array[$bike->id] = $bike->AAP805; ?>
 @endforeach
 
 @foreach($wheels as $wheel)
-  <?php $wheels_array[$wheel->id] = $wheel->artikelbezeichnung; ?>
+  <?php $wheels_array[$wheel->id] = $wheel->AAP805; ?>
 @endforeach
 
 @section('content')
@@ -31,28 +31,28 @@
       </div>
 
       <div class="form-group">
-        {{ Form::label('artikelbezeichnung', 'Artikelbezeichnung') }}
-        {{ Form::text('artikelbezeichnung', Input::old('artikelbezeichnung'), array('class' => 'form-control')) }}
+        {{ Form::label('AAP805', 'Artikelbezeichnung') }}
+        {{ Form::text('AAP805', Input::old('AAP805'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
-        {{ Form::label('hersteller', 'Hersteller') }}
-        {{ Form::select('hersteller', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('hersteller '), array('class' => 'form-control')) }}
+        {{ Form::label('AAO677', 'Hersteller') }}
+        {{ Form::select('AAO677', array('0' => 'Hersteller wählen', 'KTM' => 'KTM', 'Giant' => 'Giant', 'Diamant' => 'Diamant', 'Cube' => 'Cube'), Input::old('AAO677'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
-        {{ Form::label('herstellerartikelnummer', 'Herstellerartikelnummer') }}
-        {{ Form::text('herstellerartikelnummer', Input::old('herstellerartikelnummer'), array('class' => 'form-control')) }}
+        {{ Form::label('AAO676', 'Herstellerartikelnummer') }}
+        {{ Form::text('AAO676', Input::old('AAO676'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
-        {{ Form::label('lieferantenname', 'Lieferantenname') }}
-        {{ Form::text('lieferantenname', Input::old('lieferantenname'), array('class' => 'form-control')) }}
+        {{ Form::label('AAO735', 'Lieferantenname') }}
+        {{ Form::text('AAO735', Input::old('AAO735'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
-        {{ Form::label('lieferantenartikelnummer', 'Lieferantenartikelnummer') }}
-        {{ Form::text('lieferantenartikelnummer', Input::old('lieferantenartikelnummer'), array('class' => 'form-control')) }}
+        {{ Form::label('AAO736', 'Lieferantenartikelnummer') }}
+        {{ Form::text('AAO736', Input::old('AAO736'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
@@ -61,13 +61,13 @@
       </div>
 
       <div class="form-group">
-        {{ Form::label('gtin', 'GTIN') }}
-        {{ Form::text('gtin', Input::old('gtin'), array('class' => 'form-control')) }}
+        {{ Form::label('AAO663', 'GTIN') }}
+        {{ Form::text('AAO663', Input::old('AAO663'), array('class' => 'form-control')) }}
       </div>
 
       <div class="form-group">
-        {{ Form::label('taric', 'TARIC') }}
-        {{ Form::text('taric', Input::old('taric'), array('class' => 'form-control')) }}
+        {{ Form::label('AAD931', 'TARIC') }}
+        {{ Form::text('AAD931', Input::old('AAD931'), array('class' => 'form-control')) }}
       </div>
 
       {{ Form::submit('Anlegen', array('class' => 'btn btn-primary')) }}

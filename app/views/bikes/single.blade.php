@@ -5,7 +5,7 @@
 @stop
 
 @section('headline')
-  <h1>{{ $response[0]->artikelbezeichnung }}</h1>
+  <h1>{{ $response[0]->AAP805 }}</h1>
 @stop
 
 @section('content')

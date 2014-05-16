@@ -48,14 +48,14 @@ class WheelController extends \BaseController {
 		// validate
 		$rules = array(
 			'bike_id' => 'required|numeric',
-			'artikelbezeichnung' => 'required',
-			'hersteller' => 'required',
-			'herstellerartikelnummer' => 'required',
-			'lieferantenname' => 'required',
-			'lieferantenartikelnummer' => 'required',
+			'AAP805' => 'required',
+			'AAO677' => 'required',
+			'AAO676' => 'required',
+			'AAO735' => 'required',
+			'AAO736' => 'required',
 			'verweis' => 'required|numeric',
-			'gtin' => 'required',
-			'taric' => 'required|numeric'
+			'AAO663' => 'required',
+			'AAD931' => 'required|numeric'
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -68,15 +68,15 @@ class WheelController extends \BaseController {
 			// store
 			$wheel = new Wheel;
 			$wheel->bike_id = Input::get('bike_id');
-			$wheel->artikelbezeichnung = Input::get('artikelbezeichnung');
-			$wheel->produkttyp = 'Laufrad';
-			$wheel->hersteller = Input::get('hersteller');
-			$wheel->herstellerartikelnummer = Input::get('herstellerartikelnummer');
-			$wheel->lieferantenname = Input::get('lieferantenname');
-			$wheel->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$wheel->AAP805 = Input::get('AAP805');
+			$wheel->AAF542 = 'Laufrad';
+			$wheel->AAO677 = Input::get('AAO677');
+			$wheel->AAO676 = Input::get('AAO676');
+			$wheel->AAO735 = Input::get('AAO735');
+			$wheel->AAO736 = Input::get('AAO736');
 			$wheel->verweis = Input::get('verweis');
-			$wheel->gtin = Input::get('gtin');
-			$wheel->taric = Input::get('taric');
+			$wheel->AAO663 = Input::get('AAO663');
+			$wheel->AAD931 = Input::get('AAD931');
 			$wheel->save();
 
 			// redirect
@@ -138,14 +138,14 @@ class WheelController extends \BaseController {
 		// validate
 		$rules = array(
 			'bike_id' => 'required|numeric',
-			'artikelbezeichnung' => 'required',
-			'hersteller' => 'required',
-			'herstellerartikelnummer' => 'required',
-			'lieferantenname' => 'required',
-			'lieferantenartikelnummer' => 'required',
+			'AAP805' => 'required',
+			'AAO677' => 'required',
+			'AAO676' => 'required',
+			'AAO735' => 'required',
+			'AAO736' => 'required',
 			'verweis' => 'required|numeric',
-			'gtin' => 'required',
-			'taric' => 'required|numeric'
+			'AAO663' => 'required',
+			'AAD931' => 'required|numeric'
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -158,15 +158,15 @@ class WheelController extends \BaseController {
 			// store
 			$wheel = Wheel::find($id);
 			$wheel->bike_id = Input::get('bike_id');
-			$wheel->artikelbezeichnung = Input::get('artikelbezeichnung');
-			$wheel->produkttyp = 'Laufrad';
-			$wheel->hersteller = Input::get('hersteller');
-			$wheel->herstellerartikelnummer = Input::get('herstellerartikelnummer');
-			$wheel->lieferantenname = Input::get('lieferantenname');
-			$wheel->lieferantenartikelnummer = Input::get('lieferantenartikelnummer');
+			$wheel->AAP805 = Input::get('AAP805');
+			$wheel->AAF542 = 'Laufrad';
+			$wheel->AAO677 = Input::get('AAO677');
+			$wheel->AAO676 = Input::get('AAO676');
+			$wheel->AAO735 = Input::get('AAO735');
+			$wheel->AAO736 = Input::get('AAO736');
 			$wheel->verweis = Input::get('verweis');
-			$wheel->gtin = Input::get('gtin');
-			$wheel->taric = Input::get('taric');
+			$wheel->AAO663 = Input::get('AAO663');
+			$wheel->AAD931 = Input::get('AAD931');
 			$wheel->save();
 
 			// redirect

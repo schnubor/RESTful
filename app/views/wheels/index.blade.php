@@ -52,15 +52,15 @@
 
         <tr>
           <td>{{ $wheels->id }}</td>
-          <td>{{ $wheels->artikelbezeichnung }}</td>
-          <td>{{ $wheels->produkttyp }}</td>
-          <td>{{ $wheels->hersteller }}</td>
-          <td>{{ $wheels->herstellerartikelnummer }}</td>
-          <td>{{ $wheels->lieferantenname }}</td>
-          <td>{{ $wheels->lieferantenartikelnummer }}</td>
-          <td>{{ $wheels->gtin }}</td>
-          <td>{{ $wheels->taric }}</td>
-          <td><a href="{{ $wheels->verweis->href }}">{{ $verweis_item->artikelbezeichnung }}</a></td>
+          <td>{{ $wheels->AAP805 }}</td>
+          <td>{{ $wheels->AAF542 }}</td>
+          <td>{{ $wheels->AAO677 }}</td>
+          <td>{{ $wheels->AAO676 }}</td>
+          <td>{{ $wheels->AAO735 }}</td>
+          <td>{{ $wheels->AAO736 }}</td>
+          <td>{{ $wheels->AAO663 }}</td>
+          <td>{{ $wheels->AAD931 }}</td>
+          <td><a href="{{ $wheels->verweis->href }}">{{ $verweis_item->AAP805 }}</a></td>
           <td>
             <a class="btn btn-small btn-success" href="{{ URL::to('wheels/' . $wheels->id) }}">Show</a>
             <a class="btn btn-small btn-info" href="{{ URL::to('wheels/' . $wheels->id) . '/edit' }}">Edit</a>
