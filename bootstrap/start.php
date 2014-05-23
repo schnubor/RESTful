@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('christians-imac', 'Christians-MacBook-Pro.local')
+	'local' => array('christians-imac', 'Christians-MacBook-Pro.local', 'christians-mbp.speedport_w723_v_typ_a_1_01_001')
 
 ));
 
