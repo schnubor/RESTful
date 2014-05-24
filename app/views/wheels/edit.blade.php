@@ -5,7 +5,7 @@
 @stop
 
 @section('headline')
-  <h1>Wheel editieren <span class="method">UPDATE/PATCH</span></h1>
+  <h1>Wheel editieren <span class="method">PUT/PATCH</span></h1>
 @stop
 
 <?php
