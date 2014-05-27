@@ -32,6 +32,10 @@
 
   </div>
 
+  <footer>
+    <p class="info">Christian Korndörfer | CMM2012 | <a href="http://www.chko.org">chko.org</a> | <a href="https://twitter.com/schnubor">#schnubor</a></p>
+  </footer>
+
   @yield('scripts')
 
 </body>

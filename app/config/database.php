@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'resteb3.mysql.eu1.frbit.com',
-			'database'  => 'resteb3',
-			'username'  => 'resteb3',
-			'password'  => 'JWNuhigj9QROIXJQ',
+			'host'      => '',
+			'database'  => '',
+			'username'  => '',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

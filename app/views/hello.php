@@ -17,7 +17,7 @@
 	</div>
 
   <footer>
-    <p class="info">Christian Korndörfer &#8226; CMM2012 &#8226; EB3 </p>
+    <p class="info">Christian Korndörfer | CMM2012 | <a href="http://www.chko.org" target="_blank">chko.org</a> | <a href="https://twitter.com/schnubor" target="_blank">#schnubor</a></p>
   </footer>
   
 </body>
